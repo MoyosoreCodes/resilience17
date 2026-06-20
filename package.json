@@ -15,7 +15,7 @@
     "sync-envs": "node sync-env-files"
   },
   "keywords": [],
-  "author": "Resilience17",
+  "author": "Moyosore <moyosoreolaleye@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "@app-core/errors": "file:core/errors",
