@@ -6,7 +6,7 @@
   "type": "commonjs",
   "repository": {
     "type": "git",
-    "url": "profold-be-api-1"
+    "url": "https://github.com/MoyosoreCodes/resilience17"
   },
   "scripts": {
     "test": "set USE_MOCK_MODEL=1 && mocha --recursive --require dotenv/config",
