@@ -24,6 +24,13 @@ async function deleteCreatorCard(serviceData, options = {}) {
       throwAppError(CreatorCardMessages.CARD_NOT_FOUND, CreatorCardErrorCodes.CARD_NOT_FOUND);
     }
 
+    if (card.creator_reference !== data.creator_reference) {
+      throwAppError(
+        CreatorCardMessages.CREATOR_REFERENCE_MISMATCH,
+        CreatorCardErrorCodes.CREATOR_REFERENCE_MISMATCH
+      );
+    }
+
     await CreatorCard.deleteOne({ query: { slug: data.slug } });
 
     const deletedCard = { ...card, deleted: Date.now() };

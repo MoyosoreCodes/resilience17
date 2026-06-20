@@ -9,6 +9,7 @@ module.exports = {
   CARD_IS_DRAFT: 'This creator card is not available',
   PRIVATE_CARD_ACCESS_REQUIRED: 'This card is private. An access code is required',
   INVALID_ACCESS_CODE: 'Invalid access code',
+  CREATOR_REFERENCE_MISMATCH: 'creator_reference does not match this card',
   INVALID_SLUG_FORMAT: 'Slug may only contain letters, numbers, hyphens and underscores',
   INVALID_ACCESS_CODE_FORMAT: 'access_code must be exactly 6 alphanumeric characters',
   INVALID_LINK_URL: 'Link url must start with http:// or https://',
