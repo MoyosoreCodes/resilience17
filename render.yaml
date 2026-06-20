@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: creator-card-microservice
+    runtime: node
+    plan: free
+    branch: master
+    buildCommand: npm install
+    startCommand: node bootstrap.js
+    envVars:
+      - key: MONGODB_URI
+        sync: false
