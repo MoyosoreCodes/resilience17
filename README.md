@@ -94,6 +94,20 @@ business rules are implemented in the services and carry custom codes:
 
 Retrieval access rules are applied strictly in order: `NF01 → NF02 → AC03 → AC04`.
 
+## Additional checks (beyond the spec)
+
+Thoughtful additions beyond the assessment's required codes. The required
+request/response shapes, codes, and statuses above are unchanged.
+
+| Rule | Code | HTTP |
+|------|------|------|
+| Delete with a `creator_reference` that does not own the card | `CR01` | 403 |
+
+On `DELETE /creator-cards/:slug`, after the card is found, the request's
+`creator_reference` must match the card's stored owner; a mismatch returns
+`403 CR01`. `NF01` (not found) is still checked first, so a non-existent card
+never reveals ownership information.
+
 ## Project layout (this solution)
 
 ```
@@ -116,8 +130,8 @@ endpoints/creator-card/                    # POST / GET / DELETE handlers
 The template's `server.js` did not emit the documented top-level `code` field on
 error responses (see the error-response contract in the template guide). A minimal
 change surfaces `error.errorCode` as `code`, and `@app-core/errors` maps the
-`NF01/NF02/AC03/AC04` codes to their HTTP statuses. This aligns the framework with
-its own documented error contract.
+`NF01/NF02/AC03/AC04/CR01` codes to their HTTP statuses. This aligns the framework
+with its own documented error contract.
 
 ## Getting started
 
