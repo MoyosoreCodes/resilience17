@@ -1,7 +1,7 @@
 {
-  "name": "profold-be-api",
+  "name": "creator-card-microservice",
   "version": "1.0.0",
-  "description": "Project Scaffold for R17 Projects",
+  "description": "Creator Card microservice API (R17 assessment)",
   "main": "app.js",
   "type": "commonjs",
   "repository": {
